@@ -1,12 +1,14 @@
 var $curDay = $("#curDay");
 var $timeBlocks = $(".time-block");
-var $scheduleBlock = $(".schedule");
+var $scheduleBlock = $(".saveBtn");
 
 var toDoItems = [];
 //each object has a hour property and a text property
  
 var currentDate = moment().format("dddd, MMMM Do");
 var currentHour = moment().format("H");
+
+// document.getElementById("myBtn").addEventListener("click", displayDate);
 
 //if we don't have any todos set up, let's set up the array of objects
 function initializeSchedule(){
@@ -37,10 +39,11 @@ function setUpTimeBlocks(){
     $timeBlocks.each(function(){
       var $thisBlock = $(this);
       var thisBlockHr = parseInt($thisBlock.attr("data-hour"));
-
+console.log (currentHour)
+console.log (thisBlockHr)
       //add style to time blocks to show where we are in the day
       if (thisBlockHr == currentHour) {
-        $thisBlock.addClass("present").removeClass("past future");
+        $thisBlock.addClass("present");
       }
       if (thisBlockHr < currentHour) {
         $thisBlock.addClass("past").removeClass("present future");
@@ -69,6 +72,7 @@ function renderSchedule(){
 }
 
 function saveHandler(){
+  console.log("clicked")
 //   var thisBlock = $(this).parent();
 
   var hourToUpdate = $(this).parent().attr("data-hour");
@@ -102,6 +106,6 @@ $(document).ready(function(){
   //render schedule from local storage
   renderSchedule();
   //when a todo item save button is clicked, save it
-  $scheduleBlock.on("click", "button", saveHandler);
+  $scheduleBlock.on("click", saveHandler);
   
 });
