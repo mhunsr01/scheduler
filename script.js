@@ -36,7 +36,7 @@ function initializeSchedule(){
 
 //format timeblock colors depending on time
 function setUpTimeBlocks(){
-    $timeBlocks.each(function(){
+    $timeBlocks.each(function() {
       var $thisBlock = $(this);
       var thisBlockHr = parseInt($thisBlock.attr("data-hour"));
 console.log (currentHour)
@@ -45,10 +45,10 @@ console.log (thisBlockHr)
       if (thisBlockHr == currentHour) {
         $thisBlock.addClass("present");
       }
-      if (thisBlockHr < currentHour) {
+      else if (thisBlockHr < currentHour) {
         $thisBlock.addClass("past").removeClass("present future");
       }
-      if (thisBlockHr > currentHour) {
+      else if (thisBlockHr > currentHour) {
         $thisBlock.addClass("future").removeClass("past present");
       }
     });

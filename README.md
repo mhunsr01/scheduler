@@ -1,4 +1,4 @@
-# Scheduler
+# Non profit 
 
 #  Beginning project to create a scheduler using the local storage and moment.js as the API
 
