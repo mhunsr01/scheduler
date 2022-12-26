@@ -14,5 +14,5 @@ The code is posted in GitHub and I can be contacted using the links at that site
 
 https://mhunsr01.github.io/scheduler/
 
-
+Page snippet - https://github.com/mhunsr01/scheduler/blob/main/scheduler%20snip.GIF
 
